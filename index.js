@@ -1,4 +1,4 @@
-var pipeline = require('through2-pipeline');
+var oneway = require('oneway');
 
 module.exports = pipeware;
 
@@ -17,7 +17,7 @@ pipeware.prototype.use = function (stream) {
 pipeware.prototype.run = function () {
 	var context = {};
 	var args = arguments;
-	return pipeline(this.streams.map(function (stream) {
+	return oneway.apply(null, this.streams.map(function (stream) {
 		return !stream.pipe ? stream.apply(context, args) : stream;
 	}));
 }

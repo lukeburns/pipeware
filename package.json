@@ -1,18 +1,19 @@
 {
   "name": "pipeware",
   "description": "For making stream-based middleware",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "url": "git://github.com/lukeburns/pipeware.git"
   },
   "main": "index.js",
   "scripts": {
-    "test": "tap test.js"
+    "test": "node test.js"
   },
   "dependencies": {
-    "through2-pipeline": "^0.0.4"
+    "oneway": "^0.0.1"
   },
   "devDependencies": {
+    "readable-stream": "^1.0.27-1",
     "tape": "^2.13.4"
   }
 }
